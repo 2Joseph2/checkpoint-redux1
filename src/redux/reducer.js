@@ -5,11 +5,11 @@ import { v4 as uuidv4 } from 'uuid';
 const todoSlice = createSlice({
     name:'todos',
     initialState:{
-        items:[]
+        items:[{id:"idjfkf", text:"eat food" , completed:false}]
     },
     reducers:{
         addTodo:(state,action)=>{
-            state.items.push({id:uuidv4(),test:action.payload,completed:false})
+            state.items.push({id:uuidv4(),text:action.payload,completed:false})
         },
         toggleTodo : (state,action)=>{
             const todo = state.items.find(item => item.id === action.payload);
